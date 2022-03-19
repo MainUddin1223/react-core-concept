@@ -1,15 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 function App() {
+  const nayok = ['reubel', 'Rajjak', 'Bapparaj', 'sakib khan', 'hero alom', 'kuddus']
   return (
     (
       <div className="App">
-        <Person name="hello" address='Dhaka'></Person>
-        <Person name="gello" address='Barisal'></Person>
-        <Person name="mello" address='Kumilla'></Person>
-        <Friend name="Suzan"></Friend>
-        <Friend name="Bipul"></Friend>
-        <Friend name="Shahin"></Friend>
+        {
+          nayok.map(nai => <Person name={nai}></Person>)
+        }
+        {/* <Person name={nayok[0]} address='Dhaka'></Person>
+        <Person name={nayok[1]} address='Barisal'></Person>
+        <Person name={nayok[2]} address='Kumilla'></Person> */}
+        <Friend name="Suzan" job="Jr Engr."></Friend>
+        <Friend name="Bipul" job="Banker"></Friend>
+        <Friend name="Shahin" job="Driver"></Friend>
       </div>
     )
   );
@@ -25,7 +29,7 @@ function Friend(props) {
   return (
     <div className="friend">
       <h3>Name: {props.name}</h3>
-      <p>profession:Singer</p>
+      <p>profession:{props.job}</p>
     </div>
   )
 }
